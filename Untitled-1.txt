@@ -1,0 +1,30 @@
+ <?php include('config.php');
+$sql = "SELECT  * FROM nyumba";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      $location=$row["picture"];
+      
+       ?>
+
+<div class="swiper-slide"><center><div  class="well"><img src="images/<?php echo $location;  ?>" class="img-rounded" alt="Cinque Terre" width="204" height="336">
+<p>price</p>
+<p2><b>9000/=Tsh</b></p2>
+
+
+<br>
+<br><button>buy</button> 
+
+
+</div>  </center></div>
+
+  <?php
+    }
+} else {
+    echo "";
+}
+ $con->close();
+ ?> 
+  </div>
